@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\ShoeStore\Common\bin\Debug\Common.dll
+C:\Users\Administrator\Desktop\ShoeStore\Common\bin\Debug\Common.pdb
+C:\Users\Administrator\Desktop\ShoeStore\Common\obj\Debug\Common.dll
+C:\Users\Administrator\Desktop\ShoeStore\Common\obj\Debug\Common.pdb

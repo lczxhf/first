@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\ShoeStore\ShoeStore.Model\bin\Debug\ShoeStore.Model.dll
+C:\Users\Administrator\Desktop\ShoeStore\ShoeStore.Model\bin\Debug\ShoeStore.Model.pdb
+C:\Users\Administrator\Desktop\ShoeStore\ShoeStore.Model\obj\Debug\ShoeStore.Model.dll
+C:\Users\Administrator\Desktop\ShoeStore\ShoeStore.Model\obj\Debug\ShoeStore.Model.pdb
+E:\ShoeStore\ShoeStore.Model\bin\Debug\ShoeStore.Model.dll
+E:\ShoeStore\ShoeStore.Model\bin\Debug\ShoeStore.Model.pdb
+E:\ShoeStore\ShoeStore.Model\obj\Debug\ShoeStore.Model.dll
+E:\ShoeStore\ShoeStore.Model\obj\Debug\ShoeStore.Model.pdb
+C:\Users\Administrator\Desktop\ShoeStore\ShoeStore.MODEL\obj\Debug\ShoeStore.MODEL.csprojResolveAssemblyReference.cache

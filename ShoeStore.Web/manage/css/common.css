@@ -1,0 +1,99 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+    font-family:微软雅黑;
+}
+
+#divHead {
+   
+    width:95%;
+    height:40px;
+    margin:2px auto;
+    font-size:28px;
+    padding:5px 20px;
+}
+#divBody {
+    border:0px solid #0094ff;
+    width:95%;
+    min-height:400px;
+    margin:5px auto;
+}
+#divLeft {
+    border:0px solid #0094ff;
+    width:17.5%;
+    float:left;
+}
+#divRight {
+    border:1px solid #0094ff;
+    height:700px;
+    width:82%;
+    margin-left:18%;
+}
+
+a{
+    color:#000;
+    text-decoration:none;
+}
+a:hover{
+    color:#ff6600;
+    text-decoration:underline;
+}
+
+#divLeft ul{
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+}
+#divLeft ul li ul{
+    margin:0px 0px 0px 10px;
+}
+#divLeft ul li ul li{
+    margin:0px 0px 0px 5px;
+    padding:3px;
+}
+
+.claTitle {
+    cursor:pointer;
+    background-color:#0094ff;
+    color:#fff;
+    padding:5px;
+    font-size:18px;
+    border:1px solid #000;
+}
+#tbList {
+    border:1px solid #0094ff;
+    border-collapse:collapse;
+    width:95%;
+    margin:10px auto;
+}
+#tbList td{
+    border:1px solid #0094ff;
+    padding:3px;
+    text-align:center;
+}
+#tbList th {
+    background-color:#0094ff;
+    color:#fff;
+    border:1px solid #0026ff;
+    padding:3px;
+    text-align:center;
+}
+#dialogModify{
+    display:none;
+}
+
+#oprDiv{
+    border:1px solid #0094ff;
+    width:90%;
+    margin:5px auto;
+    padding:5px;
+    text-align:right;
+}
+#oprDiv a {
+    font-weight:normal;
+    text-decoration:underline;
+}
+#oprDiv a:hover {
+    text-decoration:none;
+    font-weight:bold;
+}

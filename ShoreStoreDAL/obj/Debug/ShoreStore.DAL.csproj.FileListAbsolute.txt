@@ -1,0 +1,7 @@
+E:\ShoeStore\ShoreStore\ShoreStore\bin\Debug\ShoreStore.dll
+E:\ShoeStore\ShoreStore\ShoreStore\bin\Debug\ShoreStore.pdb
+E:\ShoeStore\ShoreStore\ShoreStore\obj\Debug\ShoreStore.dll
+E:\ShoeStore\ShoreStore\ShoreStore\obj\Debug\ShoreStore.pdb
+E:\ShoeStore\ShoreStore\ShoreStore\bin\Debug\ShoeStore.Model.dll
+E:\ShoeStore\ShoreStore\ShoreStore\bin\Debug\ShoeStore.Model.pdb
+E:\ShoeStore\ShoreStore\ShoreStore\obj\Debug\ShoreStore.DAL.csprojResolveAssemblyReference.cache

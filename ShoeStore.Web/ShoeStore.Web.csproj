@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DE114E8-DB22-4E66-A993-9D0C2D0CEE39}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShoeStore.Web</RootNamespace>
+    <AssemblyName>ShoeStore.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="css\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="css\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="css\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="css\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="css\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="css\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="css\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="css\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="css\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="css\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="css\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="css\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\cupertino\jquery-ui-1.8.23.custom.css" />
+    <Content Include="css\ddsmoothmenu.css" />
+    <Content Include="css\nivo-slider.css" />
+    <Content Include="css\slimbox2.css" />
+    <Content Include="css\templatemo_style.css" />
+    <Content Include="foreground\about.html" />
+    <Content Include="foreground\checkout.html" />
+    <Content Include="foreground\contact.html" />
+    <Content Include="foreground\faqs.html" />
+    <Content Include="foreground\index.html" />
+    <Content Include="foreground\productdetail.html" />
+    <Content Include="foreground\products.html" />
+    <Content Include="foreground\shoppingcart.html" />
+    <Content Include="foreground\View\AboutUs.aspx" />
+    <Content Include="foreground\View\Contant.aspx" />
+    <Content Include="foreground\View\FAQS.aspx" />
+    <Content Include="foreground\View\Home.aspx" />
+    <Content Include="foreground\View\Info.aspx" />
+    <Content Include="foreground\View\ProductDetail.aspx" />
+    <Content Include="foreground\View\Products.aspx" />
+    <Content Include="foreground\View\ShoppingCart.aspx" />
+    <Content Include="images\2co.gif" />
+    <Content Include="images\arrows.png" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\bullets.png" />
+    <Content Include="images\buy.png" />
+    <Content Include="images\closelabel.gif" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\nextlabel.gif" />
+    <Content Include="images\paypal.gif" />
+    <Content Include="images\prevlabel.gif" />
+    <Content Include="images\product\01.jpg" />
+    <Content Include="images\product\02.jpg" />
+    <Content Include="images\product\03.jpg" />
+    <Content Include="images\product\04.jpg" />
+    <Content Include="images\product\05.jpg" />
+    <Content Include="images\product\06.jpg" />
+    <Content Include="images\product\07.jpg" />
+    <Content Include="images\product\08.jpg" />
+    <Content Include="images\product\09.jpg" />
+    <Content Include="images\product\10.jpg" />
+    <Content Include="images\product\10_l.jpg" />
+    <Content Include="images\product\11.jpg" />
+    <Content Include="images\product\12.jpg" />
+    <Content Include="images\product\13.jpg" />
+    <Content Include="images\product\14.jpg" />
+    <Content Include="images\product\15.jpg" />
+    <Content Include="images\product\8b24592e-e7de-46a6-bcf3-f77159c89dff_thumb.jpg" />
+    <Content Include="images\product\ec81d2bb-248f-4010-958c-70599f1bc471_thumb.jpg" />
+    <Content Include="images\product\rough\11.jpg" />
+    <Content Include="images\product\rough\12.jpg" />
+    <Content Include="images\product\rough\13.jpg" />
+    <Content Include="images\product\rough\14.jpg" />
+    <Content Include="images\product\rough\15.jpg" />
+    <Content Include="images\product\rough\8b24592e-e7de-46a6-bcf3-f77159c89dff_thumb.jpg" />
+    <Content Include="images\product\rough\ec81d2bb-248f-4010-958c-70599f1bc471_thumb.jpg" />
+    <Content Include="images\qzonebg.gif" />
+    <Content Include="images\remove_x.gif" />
+    <Content Include="images\slider\01.jpg" />
+    <Content Include="images\slider\02.jpg" />
+    <Content Include="images\slider\03.jpg" />
+    <Content Include="images\slider\04.jpg" />
+    <Content Include="images\templatemo_addtocart.png" />
+    <Content Include="images\templatemo_body.jpg" />
+    <Content Include="images\templatemo_body_top.jpg" />
+    <Content Include="images\templatemo_detail.png" />
+    <Content Include="images\templatemo_footer.png" />
+    <Content Include="images\templatemo_header_bg.png" />
+    <Content Include="images\templatemo_image_01.jpg" />
+    <Content Include="images\templatemo_list.png" />
+    <Content Include="images\templatemo_logo.png" />
+    <Content Include="images\templatemo_main_bg.png" />
+    <Content Include="images\templatemo_menubar.png" />
+    <Content Include="images\templatemo_search_bg.png" />
+    <Content Include="images\templatemo_sidebar_header.png" />
+    <Content Include="images\xiaohuangren.png" />
+    <Content Include="Js\ddsmoothmenu.js" />
+    <Content Include="Js\jquery-1.4.3.min.js" />
+    <Content Include="Js\jquery-1.8.0.min.js" />
+    <Content Include="Js\jquery-1.9.0.js" />
+    <Content Include="Js\jquery-1.9.0.min.js" />
+    <Content Include="Js\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\jquery.nivo.slider.pack.js" />
+    <Content Include="Js\jquery.tmpl.js" />
+    <Content Include="Js\jquery.tmpl.min.js" />
+    <Content Include="Js\msgBox.js" />
+    <Content Include="Js\slimbox2.js" />
+    <Content Include="manage\css\common.css" />
+    <Content Include="manage\View\CarItems.aspx" />
+    <Content Include="manage\View\FAQS.aspx" />
+    <Content Include="manage\View\Home.aspx" />
+    <Content Include="manage\View\Info.aspx" />
+    <Content Include="manage\View\Menu.aspx" />
+    <Content Include="manage\View\ProductCate.aspx" />
+    <Content Include="manage\View\Products.aspx" />
+    <Content Include="manage\View\Setting.aspx" />
+    <Content Include="manage\View\SuperUser.aspx" />
+    <Content Include="manage\View\TransactionLog.aspx" />
+    <Content Include="manage\View\User.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbHelperSQL.cs" />
+    <Compile Include="foreground\Action\C09ValidCode.ashx.cs">
+      <DependentUpon>C09ValidCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\CheckOut.ashx.cs">
+      <DependentUpon>CheckOut.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\ContantUs.ashx.cs">
+      <DependentUpon>ContantUs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\Info.ashx.cs">
+      <DependentUpon>Info.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\Registered.ashx.cs">
+      <DependentUpon>Registered.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\Action\ShoppingCart.ashx.cs">
+      <DependentUpon>ShoppingCart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Common.Master.cs">
+      <DependentUpon>Common.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Common.Master.designer.cs">
+      <DependentUpon>Common.Master</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\Contant.aspx.cs">
+      <DependentUpon>Contant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Contant.aspx.designer.cs">
+      <DependentUpon>Contant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\FAQS.aspx.cs">
+      <DependentUpon>FAQS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\FAQS.aspx.designer.cs">
+      <DependentUpon>FAQS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="foreground\View\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="foreground\View\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\BaseHandler.cs" />
+    <Compile Include="manage\Action\CarItems.ashx.cs">
+      <DependentUpon>CarItems.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\FAQS.ashx.cs">
+      <DependentUpon>FAQS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\Info.ashx.cs">
+      <DependentUpon>Info.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\Menu.ashx.cs">
+      <DependentUpon>Menu.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\ProductCate.ashx.cs">
+      <DependentUpon>ProductCate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\Products.ashx.cs">
+      <DependentUpon>Products.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\Setting.ashx.cs">
+      <DependentUpon>Setting.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\SuperUser.ashx.cs">
+      <DependentUpon>SuperUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\TransactionLog.ashx.cs">
+      <DependentUpon>TransactionLog.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Action\User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\CarItems.aspx.cs">
+      <DependentUpon>CarItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\CarItems.aspx.designer.cs">
+      <DependentUpon>CarItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\common.Master.cs">
+      <DependentUpon>common.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\common.Master.designer.cs">
+      <DependentUpon>common.Master</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\FAQS.aspx.cs">
+      <DependentUpon>FAQS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\FAQS.aspx.designer.cs">
+      <DependentUpon>FAQS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\ProductCate.aspx.cs">
+      <DependentUpon>ProductCate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\ProductCate.aspx.designer.cs">
+      <DependentUpon>ProductCate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\Setting.aspx.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\Setting.aspx.designer.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\SuperUser.aspx.cs">
+      <DependentUpon>SuperUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\SuperUser.aspx.designer.cs">
+      <DependentUpon>SuperUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\TransactionLog.aspx.cs">
+      <DependentUpon>TransactionLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\TransactionLog.aspx.designer.cs">
+      <DependentUpon>TransactionLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage\View\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage\View\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="manage\View\common.Master" />
+    <Content Include="foreground\View\Common.Master" />
+    <Content Include="foreground\Action\Login.ashx" />
+    <Content Include="foreground\Action\ContantUs.ashx" />
+    <Content Include="foreground\Action\C09ValidCode.ashx" />
+    <Content Include="foreground\Action\ShoppingCart.ashx" />
+    <Content Include="foreground\Action\Registered.ashx" />
+    <Content Include="foreground\Action\Info.ashx" />
+    <Content Include="manage\Action\Menu.ashx" />
+    <Content Include="manage\Action\User.ashx" />
+    <Content Include="manage\Action\SuperUser.ashx" />
+    <Content Include="manage\Action\Setting.ashx" />
+    <Content Include="manage\Action\Info.ashx" />
+    <Content Include="manage\Action\TransactionLog.ashx" />
+    <Content Include="manage\Action\CarItems.ashx" />
+    <Content Include="manage\Action\ProductCate.ashx" />
+    <Content Include="manage\Action\Products.ashx" />
+    <Content Include="foreground\Action\CheckOut.ashx" />
+    <Content Include="manage\Action\FAQS.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="foreground\css\" />
+    <Folder Include="foreground\images\" />
+    <Folder Include="foreground\js\" />
+    <Folder Include="manage\images\" />
+    <Folder Include="manage\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7bc5f5aa-9d82-42c2-8871-19024daf1969}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoeStore.BLL\ShoeStore.BLL.csproj">
+      <Project>{b1d40253-eb99-4d28-94bf-06a732ffac83}</Project>
+      <Name>ShoeStore.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoeStore.MODEL\ShoeStore.MODEL.csproj">
+      <Project>{0a4859d8-32e3-45b7-99aa-1cbc9c23a531}</Project>
+      <Name>ShoeStore.MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11014/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

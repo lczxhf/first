@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="common.master.cs" Inherits="ShoeStore.Web.manage.View.common" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ShoeStore后台管理</title>
+  <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/Js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../Js/manage.js"></script>
+
+    <!--begin 导入Jq UI样式和 JS-->
+    <link href="/css/cupertino/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css"/>
+    <script src="/Js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+    <script src="/Js/msgBox.js" type="text/javascript"></script>
+    <!--end   导入Jq UI样式和 JS-->
+    <style type="text/css">
+   #divHead {  border :0px hidden red; margin-top:20px;margin-left:50px; background: url(/images/templatemo_logo.png) no-repeat top left;text-align:center; }
+
+#divHead a{  width: 300px; height: 40px; margin: auto auto auto auto; font-size: 25px;  color: #2f2f2f;  }
+        #divHead a:hover
+        { 
+            text-decoration:none;
+        }
+    </style>
+    <script type="text/javascript">
+        var msgBox = null;
+        $(function () {
+            msgBox = new MsgBox({ imghref: "/images/" });
+            //菜单效果
+            $("#divLeft .claTitle").click(function () {
+                $(this).siblings("li").slideToggle();
+            });
+            
+        });
+    </script>
+    <asp:ContentPlaceHolder runat="server" ID="placeHead"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <!--头部-->
+    <div id="divHead">
+      
+         
+        <a href="#" >后台管理系统</a>
+        <a href="/foreground/View/Home.aspx" style="font-size:13px;margin-right:0px">返回前台</a>
+              
+   
+    </div>
+    <!--头部-->
+    <!--身体-->
+    <div id="divBody">
+        <!--左侧-->
+        <div id="divLeft">
+            <%=sbHtml.ToString() %>
+        </div>
+        <!--左侧-->
+        <!--右侧-->
+        <div id="divRight">
+            <asp:ContentPlaceHolder ID="placeRight" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <!--右侧-->
+    </div>
+    <!--身体-->
+</body>
+</html>

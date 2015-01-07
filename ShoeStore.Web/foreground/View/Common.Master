@@ -1,0 +1,478 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Common.master.cs" Inherits="ShoeStore.Web.foreground.View.Common" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shoes Store</title>
+<meta name="keywords" content="shoes store, free template, ecommerce, online shop, website templates, CSS, HTML" />
+<meta name="description" content="Shoes Store is a free ecommerce template provided " />
+<link href="/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/css/ddsmoothmenu.css" />
+    <script src="/Js/msgBox.js" type="text/javascript"></script>
+<script type="text/javascript" src="/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/Js/ddsmoothmenu.js"></script>
+    <link href="/css/cupertino/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/Js/jquery-ui-1.8.23.custom.min.js" type="text/javascript" ></script>
+    <style type="text/css">
+        #divCate ul{
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+}
+#divCate ul li ul{
+    margin:0px 0px 0px 10px;
+}
+#divCate ul li ul li{
+    margin:0px 0px 0px 5px;
+    padding:3px;
+}
+
+.claTitle {
+    cursor:pointer;
+    background-color:#0094ff;
+    color:#fff;
+    padding:5px;
+    font-size:18px;
+    border:1px solid #000;
+}
+        #dialogLogin
+        {
+            display:none;
+        }
+        #dRegistered
+        {
+            display:none
+        }
+    </style>
+
+<script type="text/javascript">
+
+    ddsmoothmenu.init({
+        mainmenuid: "top_nav", //menu DIV id
+        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu', //class added to menu's outer DIV
+        //customtheme: ["#1c5a80", "#18374a"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+    </script>
+    <script type="text/javascript">
+        var targetUrl = "/foreground/Action/Login.ashx";
+        $(function () {
+            
+            //设置分类菜单
+            $("#divCate .claTitle").click(function () {
+                $(this).siblings("li").slideToggle();
+            });
+            //设置MsgBox的图片路径
+            msgBox = new MsgBox({ imghref: "/images/" });
+            //设置点击了退出后
+            $("#back").click(function () {
+                $.post(targetUrl + "?type=back", null, function (jsObj) {
+                    window.location.href = jsObj.nextUrl;
+                }, "json")
+            });
+            //设置点击验证码后更换验证码
+            $("#CodeLO").click(function () {
+                
+                this.src = "/foreground/Action/C09ValidCode.ashx?s=" + Math.random();
+            });
+            $("#CodeRE").click(function () {
+                this.src = "/foreground/Action/C09ValidCode.ashx?s=" + Math.random();
+            });
+
+            //点击登陆按钮后
+            $("#login").click(ShowLogin);
+            $("#info").attr("href","info.aspx")
+            $("#aRegistered").click(Registered)
+
+            //设置模态登陆窗口的属性
+            $("#dialogLogin").dialog({
+                autoOpen: false,
+                width: 350,
+                modal: true,
+                buttons: {
+                    "登 陆": Login,
+                    "取 消": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            //设置模态注册窗口的属性
+            $("#dRegistered").dialog({
+                autoOpen: false,
+                width: 350,
+                modal: true,
+                height: 420,
+                buttons: {
+                    "注 册": submitRegistered,
+                    "取 消": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            
+                $("#Phone").keypress(function () {
+                    if (event.keyCode < 48 || event.keyCode > 57) {
+                        return false;
+                    }
+                });
+                $("#PostCode").keypress(function () {
+                    if (event.keyCode < 48 || event.keyCode > 57) {
+                        return false;
+                    }
+                });
+                $("#Age").keypress(function () {
+                    if (event.keyCode < 48 || event.keyCode > 57) {
+                        return false;
+                    }
+                });
+            
+
+
+        });    //onload事件完毕
+
+
+        //显示登陆小窗口
+        function ShowLogin() {
+            $("#CodeLO").click();
+        $("#MpassWord").val("");
+        $("#MName").val("");
+        $("#MId").val("");
+        $("#Code").val();
+        $("#dialogLogin").dialog("open");
+    };
+        
+    function Login()
+    {
+        //判断用户名与密码是否为空
+        if ($("#MName").val() != "" && $("#MpassWord").val() != "")
+        {
+            //或者表单数据并生成格式
+            var date=$("#fLogin").serialize();
+            $.post(targetUrl+"?type=login",date,function(jsObj){
+                switch (jsObj.state) {
+                    case "err":
+                        msgBox.showMsgErr(jsObj.msg);
+                        $("#CodeLO").click();
+                        $("#Code").val("");
+                        $("#MName").val("");
+                        $("#MpassWord").val("");
+                      
+                        break;
+                    case "ok":
+                        msgBox.showMsgOk(jsObj.msg);
+                        window.location.href = jsObj.nextUrl;
+                        
+                        break;
+                    case "Codeerr":
+                        msgBox.showMsgErr(jsObj.msg);
+                        $("#CodeLO").click();
+                        $("#Code").val("");
+                        $("#MName").val("");
+                        $("#MpassWord").val("");
+                        break;
+                }
+            },"json")
+         }
+        else
+        {
+            msgBox.showMsgErr ("请输入用户名/密码");
+            $("#MName").val("");
+            $("#MpassWord").val("");
+            
+            
+        }
+    }
+        //显示注册面板
+    function Registered()
+    {
+        $("#CodeRE").click();
+        $("#Name").val("");
+        $("#PassWord").val("");
+        $("#AgainPW").val("");
+        $("#RealName").val("");
+        $("#Age").val("");
+        $("#Address").val("");
+        $("#PostCode").val("");
+        $("#Phone").val("");
+        $("#Email").val("");
+        $("#ValidCode").val("");
+        $("#dRegistered").dialog("open");
+        $("#dialogLogin").dialog("close");
+
+    }
+
+    function submitRegistered()
+    {
+       
+        if (check() == false)
+        {
+            return false;
+        }
+        
+        var date = $("#fRegistered").serialize();
+        
+        $.post("/foreground/Action/Registered.ashx" + "?type=Registered", date, function (jsObj) {
+            switch (jsObj.state) {
+                case "err":
+                    msgBox.showMsgErr(jsObj.msg);
+                    $("#CodeRE").click();
+                    Registered();
+                   
+                    break;
+                case "ok":
+                    msgBox.showMsgOk(jsObj.msg);
+                    window.location.reload();
+
+                    break;
+                case "Codeerr":
+                    msgBox.showMsgErr(jsObj.msg);
+                    $("#CodeRE").click();
+                    break;
+            }
+        }, "json")
+    } 
+    function check()
+    {
+
+        if ($("#Name").val() == "") {
+          
+            msgBox.showMsgErr("请输入名字");
+            $("#Name").focus();
+
+            return false;
+        }
+
+        if ($("#PassWord").val() == "") {
+
+            msgBox.showMsgErr("请输入密码");
+            $("#PassWord").focus();
+
+            return false;
+        }
+
+        if ($("#AgainPW").val() == "") {
+
+            msgBox.showMsgErr("请重复输入密码");
+            $("#AgainPW").focus();
+
+            return false;
+        }
+
+        if ($("#RealName").val() == "") {
+
+            msgBox.showMsgErr("请输入真实名字");
+            $("#RealName").focus();
+
+            return false;
+        }
+
+        if ($("#Address").val() == "") {
+
+            msgBox.showMsgErr("请输入地址");
+            $("#Address").focus();
+
+            return false;
+        }
+        if ($("#PostCode").val() == "") {
+
+            msgBox.showMsgErr("请输入邮政编码");
+            $("#PostCode").focus();
+
+            return false;
+        }
+
+        if ($("#ValidCode").val() == "") {
+
+            msgBox.showMsgErr("请输入验证码");
+            $("#ValidCode").focus();
+
+            return false;
+        }
+    }
+
+    </script>
+
+    <asp:ContentPlaceHolder runat="server" ID="placeHead"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+    
+<div id="templatemo_body_wrapper">
+  <div id="templatemo_wrapper">
+
+	<div id="templatemo_header">
+    	<div id="site_title"><h1><a href="#">Online Shoes Store</a></h1></div>
+        
+        	<%=base.state %>
+		
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_header -->
+    
+    <div id="templatemo_menubar">
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+               <asp:Repeater runat="server" ID="rptlist">
+                   <ItemTemplate>
+                       <li><a href="<%#Eval("MUrl") %>"><%#Eval("MName") %></a></li>
+                   </ItemTemplate>
+               </asp:Repeater>
+                
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+        <div id="templatemo_search">
+            <form action="Products.aspx" method="get" id="fSearch">
+                <input type="hidden" name="type" value="search" />
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="search" value="" title="search"  id="searchbutton"  class="sub_btn"  />
+            </form>
+        </div>
+    </div> <!-- END of templatemo_menubar -->
+	
+    
+    <div id="templatemo_main">
+    	<div id="sidebar" class="float_l">
+        	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>类别</h3>   
+                <div class="content" id="divCate"> 
+                    <%=sbHtml %>
+<%--                	<ul class="sidebar_list">
+                    	
+                        <asp:Repeater runat="server" ID="rptCate">
+                            <ItemTemplate>
+                              <%Cate(); %>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        
+                    </ul>--%>
+                </div>
+            </div>
+            <div class="sidebar_box"><span class="bottom"></span>
+            	<h3>商品排行榜 </h3>   
+                <div class="content"> 
+                    <asp:Repeater runat="server" id="Top">
+                        <ItemTemplate>
+                	<div class="bs_box">
+                    	<a href="ProductDetail.aspx?Id=<%#Eval("PIdMODEL.pId") %>"><img src="<%#Eval("PIdMODEL.PSrc").ToString().Insert(15,"/rough")%>" alt="<%#Eval("PIdMODEL.PName") %>" /></a>
+                        <h4><a href="#"><%#Eval("PIdMODEL.PName") %></a></h4>
+                        <p class="price">$<%#Eval("PIdMODEL.PPrice") %></p>
+                        <p >销量:<%#Eval("PCount")%></p>
+                        <div class="cleaner"></div>
+                    </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                   
+                </div>
+            </div>
+        </div>
+        <div id="content" class="float_r">
+            <asp:ContentPlaceHolder ID="placeRight" runat="server"></asp:ContentPlaceHolder>
+
+        </div> 
+        <div class="cleaner"></div>
+      </div>
+    <div id="templatemo_footer">
+
+
+        <div id="copyright"> Copyright ©2004-2011&nbsp;<a href="<%=setting["SiteURL"] %>" title="<%=setting["SiteName"] %>"><%=setting["SiteName"] %>&nbsp;&nbsp;<%=setting["SiteURL"] %></a> All Rights Reserved.<br />
+    <span>地址: </span><%=setting["Address"] %>　<span>邮编: </span><%=setting["PostCode"] %>　<span>联系人: </span><%=setting["ContactPerson"] %><br />
+    <span>电话: </span><%=setting["TelPhone"] %>　<span>传真: </span><%=setting["Fax"] %>　<span>手机: </span><%=setting["Mobile"] %><br />
+    <span>邮箱: </span><%=setting["Email"] %>
+  </div>
+    </div> <!-- END of templatemo_footer -->
+      <!--模态窗口登陆-->
+    <div id="dialogLogin" title="登陆" class="dialogPanel">
+    <form id="fLogin">
+    <input type="hidden" id="MId" name="MId" />
+    <table id="tbModify">
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" id="MName" name="MName" /></td>
+            <td>普通用户:<input  type="radio" name="users" value="user" checked="checked"/></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" id="MpassWord" name="MpassWord" /></td>
+            <td>管理员<input  type="radio" name="users" value="super" /></td>
+        </tr>
+        <tr>
+            <td>验证码</td><td ><input type="text" name="ValidCode" id="Code" /></td><td><img src="/foreground/Action/C09ValidCode.ashx" id="CodeLO" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">是否自动登录:<input type="checkbox" name="checkAlawy" /></td><td><a href="javascript:void(0)" id="aRegistered">注册</a></td>
+        </tr>
+     
+    </table>
+    </form>
+</div>
+      
+            <!--模态窗口注册-->
+    <div id="dRegistered" title="普通用户注册" class="dialogPanel">
+    <form id="fRegistered">
+    
+    <table id="Table1">
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" id="Name" name="Name" />*</td>
+            
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" id="PassWord" name="PassWord" />*</td>
+           
+        </tr>
+        <tr>
+            <td>重复密码</td>
+            <td><input type="password" id="AgainPW" name="AgainPW" />*</td>
+           
+        </tr>
+        <tr>
+            <td>真实姓名</td>
+            <td><input type="text" id="RealName" name="RealName" />*</td>
+           
+        </tr>
+        <tr>
+            <td>年龄</td>
+            <td><input type="text" id="Age" name="Age" /></td>
+           
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td><input type="text" id="Address" name="Address" />*</td>
+           
+        </tr>
+        <tr>
+            <td>邮政编码</td>
+            <td><input type="text" id="PostCode" name="PostCode" />*</td>
+           
+        </tr>
+        <tr>
+            <td>手机号码</td>
+            <td><input type="text" id="Phone" name="Phone" /></td>
+           
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text" id="Email" name="Email" /></td>
+           
+        </tr>
+        <tr>
+            <td>验证码</td><td ><input type="text" name="ValidCode" id="ValidCode" /></td><td><img src="/foreground/Action/C09ValidCode.ashx" id="CodeRE" /></td>
+        </tr>
+      
+     
+    </table>
+    </form>
+</div>
+        
+</div> <!-- END of templatemo_wrapper -->
+</div> <!-- END of templatemo_body_wrapper -->
+
+</body>
+</html>
